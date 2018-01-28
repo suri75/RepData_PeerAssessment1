@@ -3,7 +3,7 @@ title: "Reproducible Research: Peer Assessment 1"
 output: html_document
 ---
 
-```{r, echo=FALSE, results='hide', warning=FALSE, message=FALSE}
+```{r, echo=TRUE, results='hide', warning=FALSE, message=FALSE}
 library(ggplot2)
 library(scales)
 library(Hmisc)
@@ -99,7 +99,7 @@ stepsByDayMedianImputed <- median(stepsByDayImputed)
 ----
 
 ## Are there differences in activity patterns between weekdays and weekends?
-##### 1. Create a new factor variable in the dataset with two levels - "weekday" and "weekend" indicating whether a given date is a weekday or weekend day.
+##### 1. Create a new factor variable in the dataset with two levels – “weekday” and “weekend” indicating whether a given date is a weekday or weekend day.
 
 ```{r}
 activityDataImputed$dateType <-  ifelse(as.POSIXlt(activityDataImputed$date)$wday %in% c(0,6), 'weekend', 'weekday')
